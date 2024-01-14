@@ -26,7 +26,7 @@ def write_strings_to_file(str_list, file_path):
             file.write(item + "\n")
 
 
-exclusion_eles = ["vscode", "pycache"]
+exclusion_eles = ["vscode", "pycache", ".git"]
 file_name = "case.pth"
 
 paths = get_absolute_paths(".")

@@ -9,7 +9,9 @@ source /path/to/mine-environments/bin/activate
 ### 将返回一个包含 site-packages 目录路径的列表。通常第一个路径是默认的 site-packages 目录
 
 ```
-python3 -c "import site; print(site.getsitepackages())"
+y=$(python3 -c "import site; site_paths = site.getsitepackages(); print(site_paths[0])");
+echo $y;
+mv *.pth $y;
 ```
 
 <hr>

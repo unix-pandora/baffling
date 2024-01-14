@@ -3,5 +3,11 @@
     "editor.defaultFormatter": "ms-python.black-formatter"
   },
   "python.formatting.provider": "none",
-  "python.analysis.extraPaths": ["./src/api", "./src/shackle", "./src/public"]
+  "python.analysis.extraPaths": [
+    "./src/api",
+    "./src/shackle",
+    "./src/public",
+    "./src/public/cryptography",
+    "./src/public/input_output"
+  ]
 }

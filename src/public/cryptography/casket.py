@@ -7,10 +7,15 @@ import parameters as para
 
 # 需要补位，str不是16的倍数那就补足为16的倍数
 def completion_string(key_str):
+    key_str = str(key_str).strip()
     print("key_string length", len(key_str))
 
-    while len(key_str) % para.encrypt_upper_limit != 0:
-        key_str += "\0"
+    if key_str is None:
+        raise ValueError("completion_key_str: key_str can not be None")
+    if len(key_str) < para.encrypt_upper_limit:
+        key_str += "\0" * (para.encrypt_upper_limit - len(key_str))
+    if len(key_str) > para.encrypt_upper_limit:
+        key_str = key_str[: para.encrypt_upper_limit]
 
     # 将字符串转换为字节串
     key_byte = str.encode(key_str)

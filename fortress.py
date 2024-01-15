@@ -29,6 +29,7 @@ def main(argv):
     except getopt.GetoptError:
         print("error: fortress.py -p <pattern>")
         print("or: fortress.py --pattern=<pattern>")
+        print("Option order: 0(reinforce) or 1(ablation)")
         sys.exit(2)
 
     # 打印 返回值args列表，即其中的元素是那些不含'-'或'--'的参数。
@@ -40,6 +41,7 @@ def main(argv):
         if opt in ("-h", "--help"):
             print("command format: fortress.py -p <pattern>")
             print("or: fortress.py --pattern=<pattern>")
+            print("Option order: 0(reinforce) or 1(ablation)")
             sys.exit()
         elif opt in ("-p", "--pattern"):
             pattern = arg
@@ -50,7 +52,7 @@ def main(argv):
     elif pattern == "1":
         ablation()
     else:
-        print("Invaild option order[except 0(reinforce) or 1(ablation)]")
+        print("Invaild except option order[ 0(reinforce) or 1(ablation) ]")
 
 
 if __name__ == "__main__":
